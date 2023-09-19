@@ -1,0 +1,98 @@
+所有安全应用都需要重定向的注册表
+//> 磁盘隐藏注册表项（完全隔离）
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+//> 迅雷、WPS等应用创建的命名空间（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace
+//> explorer输入地址历史记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths
+//> 桌面、下载等目录（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders
+//> 桌面、下载等目录（完全隔离）
+HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders
+//> 桌面文件夹需要隐藏的namespace图标
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel
+//> 此电脑名称注册表项
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}
+//> 回收站目录
+HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FolderDescriptions
+win10及以上的非Explorer安全应用都需要重定向的注册表
+//> 添加desktop命名空间注册表，用于显示个人域文件夹入口shell扩展
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace
+安全域Explorer重定向的注册表
+//> 当前用户的桌面文件夹的设置
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\Shell\\Bags\\1\\Desktop
+//> “win+r 运行”程序历史记录隔离（完全隔离）
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU
+//> explorer 搜索记录
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery
+//> 文件管理器左侧导航栏第三方网盘（WPS网盘，OneDrive等）（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace
+安全域outlook重定向的注册表
+//> office整个节点
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Office
+//> 指向当前用户的Outlook配置文件
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows Messaging Subsystem\\Profiles
+安全域ppt、excel、word、visio、ie重定向的注册表
+//> office整个节点
+HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Office
+安全域的WPS重定向的注册表
+//> 最近访问记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\kingsoft\\Office\\6.0\\wps\\RecentFiles
+安全域的WPS excel重定向的注册表
+//> 最近访问记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\kingsoft\\Office\\6.0\\et\\RecentFiles
+安全域的WPS ppt重定向的注册表
+//> 最近访问记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\kingsoft\\Office\\6.0\\wpp\\RecentFiles
+安全域的WPS pdf重定向的注册表
+//> 最近访问记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\kingsoft\\Office\\6.0\\pdf\\RecentFiles
+安全域的QQ浏览器重定向注册表
+//> QQ浏览器 进程记录信息（完全隔离）
+HKEY_CURRENT_USER\\Software\\Tencent\\QQBrowser\\Record
+安全域的7z重定向注册表
+//> 7zFM打开目录信息（完全隔离）
+HKEY_CURRENT_USER\\Software\\7-Zip\\FM
+安全域的画图重定向注册表
+//> 画图最近打开文件列表（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Paint\\Recent File List
+安全域的写字板重定向注册表
+//> 写字板最近打开文件列表（完全隔离）
+HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Wordpad\\Recent File List
+安全域的XShell重定向个注册表
+//> XSHELL会话记录（完全隔离）
+HKEY_CURRENT_USER\\Software\\NetSarang\\Xshel
+@qjx @lingsg @liuyx @zxw @ysl
+
+1 回复2
+
+回复
+
+创建时间
+6 天
+最后回复
+5 天
+1
+回复
+12
+浏览
+1
+用户
+2
+赞
+
+pengtao
+彭涛
+5 天
+需要整理目前已经重定向的注册表项，列出清除缓存时需要删除的重定向注册表
+
+最终结论，除了回收站注册表不删除外，其余都删除 @liuyx
+
+//> 回收站目录
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions
+
+
+
+
+
+fsutil file createnew 1.txt 999999999
